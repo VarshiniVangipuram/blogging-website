@@ -1,0 +1,694 @@
+/* Global styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Muli', sans-serif;
+    background-color: #f8f8f8;
+    color: #333;
+  }
+  
+  h1, h2 {
+    font-family: 'Philosopher', sans-serif;
+  }
+  
+ /* Header Styles */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #7e685a;
+    padding: 20px;
+  }
+  
+  .logo img {
+    height: 50px; /* Adjust the height of the logo */
+  }
+  
+  nav ul {
+    list-style-type: none;
+    display: flex;
+  }
+  
+  nav ul li {
+    margin-left: 10px;
+  }
+  
+  nav ul li a {
+    color: #c2cad0;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  nav ul li a:hover {
+    color: #e7717d;
+  }
+  
+  
+/* Intro Section: Improved styling */
+.intro {
+    background-color: #e7717d;
+    color: white;
+    text-align: center;
+    padding: 120px 0;
+    position: relative;
+    overflow: hidden;
+    border-bottom: 2px solid #afd275;
+}
+
+/* Title Styling */
+.intro h1 {
+    font-size: 3.5rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.3); /* Subtle shadow for the title */
+    letter-spacing: 1px; /* Adds some space between letters */
+}
+
+/* Sub-Content Text Styling (Under the Title) */
+.intro p {
+    font-size: 1.5rem;
+    margin-bottom: 25px;
+    font-weight: 300;
+    line-height: 1.6;
+    max-width: 700px; /* Ensure the text doesn’t stretch too wide */
+    margin-left: auto;
+    margin-right: auto;
+    letter-spacing: 0.5px;
+    color: #fff;
+}
+
+/* Button Styling - Get Started */
+button.sign-in {
+    background: linear-gradient(135deg, #afd275, #7e685a);
+    color: white;
+    border: none;
+    padding: 20px 40px;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 30px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    display: inline-block;
+    margin-top: 20px;
+}
+
+/* Hover Effect for Button */
+button.sign-in:hover {
+    background: linear-gradient(135deg, #7e685a, #afd275);
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+}
+
+/* Button Focus (removes outline) */
+button.sign-in:focus {
+    outline: none;
+}
+  
+  /* Post Card Layout */
+.post {
+    position: relative;
+    width: 100%;
+    height: 400px; /* Adjust this value as necessary */
+    background-size: cover;
+    background-position: center;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
+  }
+  
+  .post .text {
+    position: absolute;
+    z-index: 1; /* Ensures text is on top of the image */
+    max-width: 50%;
+    text-align: center;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.5); /* Adds a semi-transparent background for readability */
+    border-radius: 10px;
+  }
+  
+  /* For 1st and 3rd sections (Text on the Left) */
+  .image-left-1 .text,
+  .image-left-3 .text {
+    left: 80px; /* Position text on the left */
+    text-align: left; /* Align text to the left */
+  }
+  
+  /* For 2nd and 4th sections (Text on the Right) */
+  .image-right-2 .text,
+  .image-right-4 .text {
+    right: 80px; /* Position text on the right */
+    text-align: right; /* Align text to the right */
+  }
+  
+  .post h2 {
+    font-size: 2rem;
+    margin-bottom: 15px;
+  }
+  
+  .post p {
+    font-size: 1.25rem;
+  }
+  
+  /* Section-specific Styles */
+  .image-left-1 {
+    background-image: url('images/themes/homepage.png'); /* Replace with actual image path for section 1 */
+  }
+  
+  .image-right-2 {
+    background-image: url('images/themes/food.png'); /* Replace with actual image path for section 2 */
+  }
+  
+  .image-left-3 {
+    background-image: url('images/themes/nature.png'); /* Replace with actual image path for section 3 */
+  }
+  
+/* Carousel Container */
+.carousel-container {
+    position: relative;
+    max-width: 100%;
+    margin: 40px auto;
+    text-align: center;
+  }
+  
+  .carousel-container h2 {
+    font-size: 2rem;
+    font-family: 'Philosopher', sans-serif;
+    margin-bottom: 20px;
+    color: #7e685a;
+  }
+  
+  /* Carousel Wrapper */
+  .carousel {
+    display: flex;
+     overflow: hidden; /* Hide extra cards */
+    justify-content: center;
+    gap: 30px;
+    transition: transform 0.5s ease-in-out;
+  }
+  
+  /* Carousel Cards */
+  .carousel-card {
+    width: 100%;  /* Full width of the container */
+    max-width: 300px;  /* Limit card width */
+    height: 400px;  /* Adjust the height based on your content */
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    text-align: center;
+    position: relative;
+    flex-shrink: 0;  /* Prevent the card from shrinking */
+    display: none;  /* Hide all cards by default */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Hover effect */
+  }
+  
+  .carousel-card.active {
+    display: block;  /* Only show the active card */
+  }
+  
+  .carousel-card:hover {
+    transform: translateY(25px); /* Lift the card slightly */
+    box-shadow: 0 20px 30px rgba(0, 0, 0, 0.2); /* Increase shadow for hover effect */
+  }
+
+  .carousel-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+  }
+  
+  .carousel-card h3 {
+    font-size: 1.5rem;
+    margin-top: 10px;
+    font-family: 'Philosopher', sans-serif;
+  }
+  
+  .carousel-card p {
+    font-size: 1.1rem;
+    color: #7e685a;
+    margin: 10px;
+    line-height: 1.4;
+  }
+  
+  /* Carousel Navigation (Prev & Next) */
+  .carousel-prev,
+  .carousel-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    border: none;
+    padding: 15px;
+    cursor: pointer;
+    border-radius: 50%;
+    font-size: 1.5rem;
+    transition: background-color 0.3s ease;
+    z-index: 10;
+  }
+  
+  .carousel-prev {
+    left: 10px;
+  }
+  
+  .carousel-next {
+    right: 10px;
+  }
+  
+  .carousel-prev:hover,
+  .carousel-next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+    opacity: 0.8;
+  }
+  
+
+
+ 
+
+
+/* Media Queries */
+
+
+/* Small Screen (Mobile) Styles for the Intro */
+@media (max-width: 768px) {
+    .intro {
+        padding: 100px 20px;
+    }
+
+    .intro h1 {
+        font-size: 2.5rem;
+    }
+
+    .intro p {
+        font-size: 1.2rem;
+    }
+
+    button.sign-in {
+        padding: 15px 30px;
+        font-size: 16px;
+    }
+    .carousel {
+        gap: 10px;
+      }
+    
+      .carousel-card {
+        width: 250px;
+        height: 350px;
+      }
+    }
+    
+    
+    /* Larger Sections */
+    .post {
+      padding: 50px;
+    }
+    
+    .intro {
+      padding: 120px 0;
+    }
+    
+
+/* Tablet Styles */
+@media (max-width: 1024px) {
+    .intro h1 {
+        font-size: 3rem;
+    }
+
+    .intro p {
+        font-size: 1.4rem;
+    }
+
+    button.sign-in {
+        padding: 18px 35px;
+        font-size: 17px;
+    }
+}
+    .intro h1 {
+        font-size: 2.5rem;
+    }
+
+    .post {
+        height: 350px;
+    }
+
+    .post .text {
+        max-width: 60%; /* Slightly wider text container for tablets */
+    }
+
+    .post h2 {
+        font-size: 1.8rem;
+    }
+
+    .post p {
+        font-size: 1.1rem;
+    }
+
+    /* Styling for Success Stories Section */
+/* Styling for Success Stories Section */
+.success-stories {
+    background-color: #f3f3f3;
+    padding: 40px;
+    text-align: center;
+  }
+  
+  .success-stories h2 {
+    font-size: 2.5rem;
+    color: #7e685a;
+    margin-bottom: 30px;
+  }
+  
+  /* Create a flex container for the testimonials */
+  .testimonials-container {
+    display: flex;
+    justify-content: space-between; /* Space out the items evenly */
+    gap: 20px; /* Add some space between the items */
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+  }
+  
+  .testimonial {
+    flex: 1; /* Makes each testimonial take equal width */
+    min-width: 280px; /* Minimum width to keep items responsive */
+    margin-bottom: 15px;
+  }
+  
+  .collapsible {
+    background-color: #7e685a;
+    color: white;
+    cursor: pointer;
+    padding: 15px;
+    width: 100%;
+    text-align: left;
+    border: none;
+    outline: none;
+    font-size: 1.2rem;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+  }
+  
+  .collapsible:hover {
+    background-color: #afd275;
+  }
+  
+  .content {
+    padding: 15px;
+    display: none;
+    background-color: #fff;
+    color: #333;
+    font-size: 1.1rem;
+    border-radius: 5px;
+  }
+  
+  
+
+
+/* Desktop Styles */
+@media (min-width: 1025px) {
+    .post {
+        height: 400px;
+    }
+
+    .intro h1 {
+        font-size: 3rem;
+    }
+
+    .intro p {
+        font-size: 1.5rem;
+    }
+
+    .post .text {
+        max-width: 30%; /* Keep text container narrower on larger screens */
+    }
+
+    .post h2 {
+        font-size: 2rem;
+    }
+
+    .post p {
+        font-size: 1.25rem;
+    }
+}
+
+/* Footer Styles */
+footer {
+    background-color: #7e685a;
+    color: #fff;
+    padding: 40px 0;
+  }
+  
+  .footer-content {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    gap: 40px;
+  }
+  
+  .footer-about,
+  .footer-links,
+  .footer-social,
+  .footer-newsletter {
+    width: 23%;
+  }
+  
+  footer h3 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    font-family: 'Philosopher', sans-serif;
+  }
+  
+  footer p {
+    font-size: 1rem;
+    line-height: 1.5;
+    margin-bottom: 15px;
+  }
+  
+  footer ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  footer ul li {
+    margin: 8px 0;
+  }
+  
+  footer ul li a {
+    text-decoration: none;
+    color: #c2cad0;
+    font-size: 1.1rem;
+  }
+  
+  footer ul li a:hover {
+    color: #e7717d;
+  }
+  
+  footer .footer-social ul {
+    display: flex;
+    gap: 20px;
+  }
+  
+  footer .footer-social ul li a img {
+    width: 30px;
+    height: 30px;
+    transition: transform 0.3s ease;
+  }
+  
+  footer .footer-social ul li a img:hover {
+    transform: scale(1.2);
+  }
+  
+  footer .footer-newsletter form {
+    display: flex;
+    gap: 10px;
+  }
+  
+  footer .footer-newsletter input {
+    padding: 10px;
+    font-size: 1rem;
+    width: 70%;
+    border-radius: 30px;
+    border: 1px solid #ccc;
+  }
+  
+  footer .footer-newsletter button {
+    padding: 10px 20px;
+    font-size: 1rem;
+    background-color: #afd275;
+    color: white;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  footer .footer-newsletter button:hover {
+    background-color: #7e685a;
+  }
+  
+  .footer-bottom {
+    background-color: #5c4d3b;
+    color: #fff;
+    text-align: center;
+    padding: 15px;
+    margin-top: 30px;
+    font-size: 0.9rem;
+  }
+  
+  /* Responsive Styles for Footer */
+  @media (max-width: 768px) {
+    .footer-content {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .footer-about,
+    .footer-links,
+    .footer-newsletter {
+      width: 100%;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+  
+    .footer-newsletter input {
+      width: 60%;
+    }
+  
+    .footer-newsletter button {
+      width: 30%;
+    }
+  }
+
+/* login & register page */
+
+
+body {
+  height: 100%;
+  overflow: hidden;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Adding background image to right side */
+.sign-in-page .background-Right {
+  position: absolute;
+  right: 0;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(to right, #000428, #004e92);
+  background-size: cover;
+  background-position: 50% 50%;
+}
+
+/* Adding background image to left side */
+.sign-in-page .background-Left {
+  position: absolute;
+  left: 0;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(to right, #02a8a8, #4fb783);
+  background-size: cover;
+  background-position: 50% 50%;
+}
+
+.sign-in-page #background {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: -3;
+}
+
+/* Slide is used to slide the form left-right
+  sides when toggle on button */
+.sign-in-page #slide {
+  width: 50%;
+  max-height: 100%;
+  height: 100%;
+  overflow: hidden;
+  margin-left: 50%;
+  position: absolute;
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25),
+      0 10px 10px rgba(0, 0, 0, 0.22);
+}
+
+/* This make forms z-index greater
+than background-image */
+.sign-in-page .top {
+  width: 200%;
+  height: 100%;
+  position: relative;
+  left: 0;
+  left: -100%;
+}
+
+/* This indicates Login-form will
+appear on the left side */
+.sign-in-page .left {
+  width: 50%;
+  height: 100%;
+  background: #ffff;
+  left: 0;
+  position: absolute;
+}
+
+/* This indicates Register-form
+  will appear on the right side */
+.sign-in-page .right {
+  width: 50%;
+  height: 100%;
+  background: #ffff;
+  right: 0;
+  position: absolute;
+}
+
+/* Position the form into center
+of the viewbox */
+.sign-in-page .content {
+  width: 250px;
+  margin: 0 auto;
+  top: 30%;
+  position: absolute;
+  left: 50%;
+  margin-left: -125px;
+}
+
+.sign-in-page.content h2 {
+  color: #4caf50;
+  font-size: 35px;
+}
+
+.sign-in-page button {
+  background-color: #4caf50;
+  color: white;
+  width: auto;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+}
+
+.sign-in-page input[type="text"],
+.sign-in-page input[type="password"] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+/* off class is used to indicate
+the active button like login
+or register button */
+.sign-in-page .on-off {
+  background: none;
+  color: #4caf50;
+  box-shadow: none;
+}
